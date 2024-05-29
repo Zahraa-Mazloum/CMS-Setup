@@ -16,20 +16,20 @@
   const collapse5 = ref(false);
   const dropdown8 = ref(false);
 </script>
+
 <template>
-  <MDBNavbar expand="lg" light>
+  <MDBNavbar classContainer="justify-content-start" expand="lg" light transparent class="custom-navbar">
+    <MDBNavbarBrand href="#">Navbar</MDBNavbarBrand>
+
     <!-- Toggle button -->
-    <MDBNavbarToggler
-      target="#navbarRightAlignExample"
-      @click="collapse5 = !collapse5"
-    ></MDBNavbarToggler>
+    <MDBNavbarToggler  target="#nav" data-mdb-target="#nav" @click="collapse5 = !collapse5">
+    </MDBNavbarToggler>
     <!-- Collapsible wrapper -->
-    <MDBCollapse v-model="collapse5" id="navbarRightAlignExample">
-      <MDBNavbarNav right class="mb-2 mb-lg-0">
+    <MDBCollapse v-model="collapse5" id="nav">
+
+      <MDBNavbarNav right class="mb-2 mb-lg-0" center> 
         <!-- Right links -->
-        <MDBNavbarItem to="#" active>
-          Home
-        </MDBNavbarItem>
+        <MDBNavbarItem href="#" active>Home</MDBNavbarItem>
         <MDBNavbarItem href="#" active>
           Link
         </MDBNavbarItem>
@@ -44,9 +44,7 @@
           <MDBDropdownMenu>
             <MDBDropdownItem href="#">Action</MDBDropdownItem>
             <MDBDropdownItem href="#">Another Action</MDBDropdownItem>
-            <MDBDropdownItem href="#"
-              >Something else here</MDBDropdownItem
-            >
+            <MDBDropdownItem href="#">Something else here</MDBDropdownItem>
           </MDBDropdownMenu>
         </MDBDropdown>
         <MDBNavbarItem
@@ -63,3 +61,11 @@
     <!-- Collapsible wrapper -->
   </MDBNavbar>
 </template>
+<style scoped>
+.custom-navbar {
+  padding-left: 4% !important;
+  --mdb-navbar-box-shadow:none !important;
+  padding-right: 3% !important;
+
+}
+</style>
