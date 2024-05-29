@@ -19,12 +19,11 @@
 {% block content %}
 
   {# This header contains the navigation menu #}
-  <header class="header-wrapper">
-    <div class="m-4">		
-      <nav class="navbars">
-        <a href="#" class="logo">Logo</a>
-        <div class="navmenu">
-          {# These are the navigation links #}
+  <header>	
+      {# <nav class="navbars"> #}
+        {# <a href="#" class="logo">Logo</a> #}
+        {# <div class="navmenu">
+          These are the navigation links
           {{ "Home" | link("/default/index", { class: "navlink" })}}
           {{ "About" | link("/default/content", {id: 'cms.contents.default.about' | ref}, { class: "navlink" })}}
           {{ "Real Estate" | link("/default/contents", { type: 'real-estate' }, { class: "navlink" })}}
@@ -37,8 +36,10 @@
           <span class="bar"></span>
         </div>
       </nav>
-    </div>
-  </header>
+    </div> #}
+	{{ 'NavbarMDB' | vue()}}
+
+  {# </header> #}
 
   {# This is the main content area of the page #}
   <main class="body-wrapper">

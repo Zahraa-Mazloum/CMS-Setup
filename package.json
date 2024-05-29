@@ -9,7 +9,6 @@
     "optimize": "vite optimize",
     "composer:update": "composer update --ignore-platform-reqs -W",
     "serve": "php yii serve --docroot=./public"
-
   },
   "keywords": [],
   "author": "",
@@ -41,8 +40,9 @@
     "editorjs-paragraph-with-alignment": "~3.0.0",
     "editorjs-table": "^1.4.10",
     "editorjs-text-color-plugin": "^2.0.4",
-    "libphonenumber-js": "^1.10.44",
     "jquery": "^3.7.0",
+    "libphonenumber-js": "^1.10.44",
+    "mdb-vue-ui-kit": "^5.0.0",
     "mitt": "^3.0.1",
     "outdent": "^0.8.0",
     "pinia": "^2.1.6",
