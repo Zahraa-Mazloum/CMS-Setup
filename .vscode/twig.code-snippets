@@ -1,0 +1,26 @@
+{
+    "Categories List": {
+        "prefix": "categories",
+        "body": "{% categories type=\"\" sort=\"\" limit=\"\" parent=\"\" %} {{ categories }} {{ sql }} {% endcategories %}",
+        "description": "Categories Model Block",
+        "scope": "twig"
+    },
+    "Contents List": {
+        "prefix": "contents",
+        "body": "{% contents type=\"\" sort=\"\" limit=\"\" category=\"\" %} {{ contents }} {{ sql }} {% endcontents %}",
+        "description": "Contents Model Block",
+        "scope": "twig"
+    },
+    "Content Model": {
+        "prefix": "content",
+        "body": "{% content \"id or reference\" %} {{ widget }} {{ content }} {{ html | run | raw }} {% endcontent %}",
+        "description": "Content Model Block",
+        "scope": "twig"
+    },
+    "Category Model": {
+        "prefix": "category",
+        "body": "{% category \"id or reference\" %} {{ category }} {% endcategory %}",
+        "description": "Category Model Block",
+        "scope": "twig"
+    }
+}

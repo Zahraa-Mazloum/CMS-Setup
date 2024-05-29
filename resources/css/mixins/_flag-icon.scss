@@ -1,0 +1,13 @@
+@import "../config/vars";
+
+@mixin flag-icon($country, $flag-icons-use-square : false) {
+    .fi-#{$country} {
+        background-image: url(#{$flag-icons-path}#{$flag-icons-rect-path}/#{$country}.svg);
+
+        @if $flag-icons-use-square {
+            &.fis {
+                background-image: url(#{$flag-icons-path}#{$flag-icons-square-path}/#{$country}.svg);
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@mixin lang($name) {
+    @at-root {
+        #{selector-nest("html[lang=#{$name}]", &)} {
+            @content;
+        }
+    }
+}
+
+@mixin en() {
+    @include lang("en") {
+        @content;
+    }
+}
+
+@mixin ar() {
+    @include lang("ar") {
+        @content;
+    }
+}

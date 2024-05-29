@@ -1,0 +1,11 @@
+@import "@scss/mixins/dark";
+
+.public-layout {
+    background: linear-gradient(-65deg, $gray-2, $white, $gray-5);
+    justify-content: center;
+    align-items: center;
+
+    @include dark {
+        background: linear-gradient(-65deg, $gray-7, $black, $gray-9);
+    }
+}

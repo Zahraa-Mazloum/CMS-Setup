@@ -1,0 +1,6 @@
+<div class="content-about">
+    <div class="title">
+        <h1>{{ model.local.title }}</h1>
+    </div>
+    {{ "content" | vue({content: model.toArray([],['local', 'categories'])}) }}
+</div>

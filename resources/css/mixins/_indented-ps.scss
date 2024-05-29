@@ -1,0 +1,16 @@
+@mixin indented-ps($indent: 1.5em, $no-first-indent: true) {
+    p {
+        margin: 0;
+        text-indent: $indent;
+    }
+
+    @if $no-first-indent {
+        p:first-of-type {
+            text-indent: 0;
+        }
+    }
+}
+
+%indented-ps {
+    @include indented-ps;
+}

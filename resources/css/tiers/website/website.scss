@@ -1,0 +1,6 @@
+@import "@scss/startup";
+
+@layer layout {
+    @import "sections/main-layout";
+    @import "sections/content-real-estate";
+}

@@ -1,0 +1,97 @@
+{# This Twig template extends the base template and defines the layout for the main page #}
+
+{% extends '@resources/tiers/_base.twig' %}
+
+{# This block sets the page loader widget #}
+{% block html %}
+  {{ use('app/widgets/PageLoader') }}
+	{% set pageLoader = page_loader_widget({once:true}) %}
+  {{ parent() }}
+{% endblock %}
+
+{# This block sets the main layout class #}
+{% block body %}
+  {{ 'main-layout' | layoutClass }}
+  {{ parent() }}
+{% endblock %}
+
+{# This block contains the main content of the page #}
+{% block content %}
+
+  {# This header contains the navigation menu #}
+  <header class="header-wrapper">
+    <div class="m-4">		
+      <nav class="navbars">
+        <a href="#" class="logo">Logo</a>
+        <div class="navmenu">
+          {# These are the navigation links #}
+          {{ "Home" | link("/default/index", { class: "navlink" })}}
+          {{ "About" | link("/default/content", {id: 'cms.contents.default.about' | ref}, { class: "navlink" })}}
+          {{ "Real Estate" | link("/default/contents", { type: 'real-estate' }, { class: "navlink" })}}
+          {{ "Services" | link("/default/services", { class: "navlink" })}}
+          {{ "Contact" | link("/default/contact", { class: "navlink" })}}
+        </div>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  {# This is the main content area of the page #}
+  <main class="body-wrapper">
+    {{ content | raw }}
+  </main>
+
+  {# This is the footer of the page #}
+  <footer class="footer-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="rights">
+            &copy;
+            {{ 'All rights reserved' | t }},
+            <span class="name">{{ app().name }}</span>
+            <span class="year">{{ "now" | date("Y") }}</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          {% if languages() | length > 1 %}
+            <div class="languages">
+              {% for lang in languages() %}
+                {% if lang.value == language() %}
+                  <span class="language active">{{ lang.label }}</span>
+                {% else %}
+                  <a href="{{ url.current({language: lang.value}) }}" class="language link">{{ lang.label }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="col-md-4">
+          <div class="power">
+            {{ 'Powerd by' | t }}
+            <a href="https://codendot.com" target="_blank">Codendot</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {# This script toggles the navigation menu when the hamburger icon is clicked #}
+  <script>
+    const hamburger = document.querySelector(".hamburger")
+    const nav_menu = document.querySelector(".navmenu")
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      nav_menu.classList.toggle("active");
+    })
+    document.querySelectorAll(".navlink").forEach(n => n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      nav_menu.classList.remove("active");
+    }))
+  </script>
+
+{% endblock %}

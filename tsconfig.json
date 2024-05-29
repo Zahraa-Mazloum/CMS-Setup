@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es6",
+    "useDefineForClassFields": true,
+    "module": "es2022",
+    "lib": [
+      "dom",
+      "es2015",
+      "es2017",
+      "es2020",
+      "es2021",
+      "es2022",
+      "es2023",
+      "esnext",
+      "WebWorker"
+    ],
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": false,
+    "traceResolution": false,
+    "paths": {
+      "@bs/*": ["node_modules/bootstrap/scss/*"],
+      "@node_modules/*": ["node_modules/*"],
+      "@scss/*": ["resources/css/*"],
+      "@apps/*": ["resources/js/tiers/*"],
+      "@/*": ["resources/js/*"]
+    },
+    "types": ["vite-plugin-pwa/client"]
+  },
+  "vueCompilerOptions": {
+    "target": 3, // or 2.7 is not supported by Volar.
+    "plugins": [
+      "@vue-macros/volar/define-slots"
+      // ...more feature
+    ]
+  },
+  "include": [
+    "resources/js/**/*.ts",
+    "resources/js/**/*.d.ts",
+    "resources/js/**/*.tsx",
+    "resources/js/**/*.vue"
+  ],
+  "exclude": ["node_modules", "public", "config", "runtime", "src", "vendor"],
+  "typeAcquisition": {
+    "enable": true
+  }
+}

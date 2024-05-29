@@ -1,0 +1,10 @@
+@import "@scss/mixins/font-size";
+
+.content-real-estate{
+    position: relative;
+
+    .title{
+        @include font-size(2);
+        text-transform: uppercase;
+    }
+}

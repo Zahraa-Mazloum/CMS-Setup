@@ -1,0 +1,7 @@
+@mixin body($name) {
+    @at-root {
+        #{selector-nest("body.#{$name}", &)} {
+            @content;
+        }
+    }
+}

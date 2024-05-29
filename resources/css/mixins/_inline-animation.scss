@@ -1,0 +1,22 @@
+@mixin inline-animation(
+    $duration,
+    $iteration: infinite,
+    $timing: linear,
+    $delay: 0,
+    $direction: normal,
+    $fillMode: none
+) {
+    $name: inline-#{unique-id()};
+
+    @keyframes #{$name} {
+        @content;
+    }
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count: $iteration;
+    animation-timing-function: $timing;
+    animation-delay: $delay;
+    animation-direction: $direction;
+    animation-fill-mode: $fillMode;
+}

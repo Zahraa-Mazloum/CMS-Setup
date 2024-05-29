@@ -1,0 +1,6 @@
+@import "@scss/startup";
+
+@layer layout {
+    @import "layouts/public";
+    @import "layouts/main";
+}

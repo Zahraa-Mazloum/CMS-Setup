@@ -1,0 +1,3 @@
+{{ param('cms_type') | filter( item => item['name'] == type ) | column('label') | first | title }}
+
+{{ "contents" | vue({type}) }}

@@ -1,0 +1,196 @@
+@import "@scss/mixins/font-size";
+
+.main-layout {
+    .header-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        min-height: 100px;
+        background: $gray-3;
+    }
+    .body-wrapper {
+        position: relative;
+        z-index: 2;
+        flex: auto;
+    }
+    .footer-wrapper {
+        position: sticky;
+        bottom: 0;
+        z-index: 3;
+        margin-top: auto;
+        min-height: 50px;
+        background: $gray-3;
+        user-select: none;
+
+        .rights {
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+
+            .name {
+                font-weight: bold;
+                color: $primary;
+            }
+
+            .year {
+                color: $primary;
+            }
+        }
+
+        .power {
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+
+            @include ar {
+                text-align: left;
+            }
+
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                transition: all 0.25s ease;
+                color: $black;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+
+        .languages {
+            position: relative;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .language {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                min-height: 100%;
+                align-items: center;
+                padding: 0 20px;
+                &.link {
+                    text-decoration: none;
+                    transition: all 0.25s ease;
+                    &:hover {
+                        color: $primary;
+                        background: $gray-1;
+                    }
+                }
+                &.active {
+                    background: $primary;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+// navbar
+  .navbars{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+
+    .logo {
+        text-decoration: none;
+        font-size: clamp(22px, 4vw, 24px);
+        color:$indigo-5;
+    
+    }
+  }
+.navmenu {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    
+    > a {
+        text-decoration: none;
+        color:$indigo-5;
+        font-size: clamp(16px, 4vw, 18px);
+        transition: all 0.25s ease;
+        text-transform: uppercase;
+    
+
+        &.active {
+      
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            font-weight: bold;
+            padding-bottom: 5px;
+          
+        }
+
+        &:hover {
+      
+            text-decoration: underline;
+            text-underline-offset: 8px;
+          
+        }
+}
+}
+  .hamburger{
+    display: none;
+    cursor: pointer;
+  }
+  .bar{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: $indigo-5;
+  }
+  .navitem{
+    padding: 0 1.5rem;
+  }
+
+  @media(max-width: 760px){
+    .bar{
+      display: block;
+    }
+    .hamburger{
+      display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+      transform: rotate(45deg) translateY(11.5px); 
+    }  
+    .hamburger.active .bar:nth-child(3){
+      transform: rotate(-45deg) translateY(-11.5px); 
+    }
+    .navmenu{
+      position: fixed;
+      right: -100%;
+      top: 70px;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background:$gray-3;
+      transition: 0.3s;
+      height: 100%;
+    }
+    .navitem{
+      padding: 1.5rem 0;
+    }
+    
+    .navmenu.active{
+      right: 0;
+      margin-top: 10%;
+    
+    }
+    
+  }

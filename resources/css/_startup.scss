@@ -1,0 +1,69 @@
+@import "@scss/bootstrap";
+
+@layer bootstrap {
+
+    // Layout & components
+    @import "bootstrap/scss/root";
+    @import "bootstrap/scss/reboot";
+    @import "bootstrap/scss/type";
+
+    @import "@scss/bootstrap/components/images";
+    @import "@scss/bootstrap/components/containers";
+    @import "@scss/bootstrap/components/grid";
+    @import "@scss/bootstrap/components/tables";
+    @import "@scss/bootstrap/components/forms";
+    @import "@scss/bootstrap/components/placeholders";
+    @import "@scss/bootstrap/components/card";
+    @import "@scss/bootstrap/components/pagination";
+
+    @import "@scss/bootstrap/components/alert";
+    @import "@scss/bootstrap/components/badge";
+    @import "@scss/bootstrap/components/buttons";
+    @import "@scss/bootstrap/components/button-group";
+    @import "@scss/bootstrap/components/close";
+    @import "@scss/bootstrap/components/dropdown";
+    @import "@scss/bootstrap/components/list-group";
+    @import "@scss/bootstrap/components/modal";
+    @import "@scss/bootstrap/components/offcanvas";
+    @import "@scss/bootstrap/components/progress";
+    @import "@scss/bootstrap/components/spinners";
+    @import "@scss/bootstrap/components/toasts";
+    @import "@scss/bootstrap/components/nav";
+    @import "@scss/bootstrap/components/popover";
+    @import "@scss/bootstrap/components/tooltip";
+    @import "@scss/bootstrap/components/carousel";
+
+    @import "@scss/bootstrap/helpers";
+
+    @import "@scss/sections/grid";
+    @import "@scss/sections/flags";
+}
+
+@layer preLayout {
+    html {
+        height: 100%;
+        width: 100%;
+    }
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    *::selection {
+        background: $primary;
+        color: $white;
+        -webkit-text-stroke: 1px transparent;
+    }
+
+    .pointer {
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+@layer end {
+    @import "@scss/sections/fancybox";
+}

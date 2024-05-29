@@ -1,0 +1,19 @@
+{% contents type=type limit=50 category=get('cid') sort="position,-local.title" %}          
+    {% for content in contents %}
+        <h2>{{ content.local.title }}</h2>
+    {% endfor %}     
+    {{ sql | debug }}
+{% endcontents %}  
+
+{% set order = '-position,local.title' %}
+{% categories type=type sort=order %} 
+    {% for category in categories %}
+        <h2>{{ category.local.title }}</h2>
+    {% endfor %}     
+    {{ sql | debug }}
+{% endcategories %}
+
+{% content "cms.contents.default.about" %} 
+    <h1>{{ content.local.title }}</h1> 
+    <div>{{ html | run | raw }}</div>
+{% endcontent %}

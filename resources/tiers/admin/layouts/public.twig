@@ -1,0 +1,14 @@
+{% extends '@resources/tiers/_base.twig' %}
+{% block html %}
+	{{ use('app/widgets/PageLoader') }}
+	{% set pageLoader = page_loader_widget() %}
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	{{ 'public-layout' | layoutClass }}
+	{{ pageLoader | raw }}
+	{{ parent() }}
+{% endblock %}
+{% block content %}
+	{{ content | raw }}
+{% endblock %}

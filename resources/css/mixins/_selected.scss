@@ -1,0 +1,14 @@
+@mixin selected($active: false) {
+    @if $active {
+        &:hover,
+        &:focus,
+        &:active {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:focus {
+            @content;
+        }
+    }
+}

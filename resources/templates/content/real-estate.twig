@@ -1,0 +1,7 @@
+<div class="content-real-estate">
+    <div class="title">
+        <h1>{{ model.local.title }}</h1>
+    </div>
+    <img src="{{ model.attrs.image.url }}">
+    {{ "content" | vue({content: model.toArray([],['local', 'categories'])}) }}
+</div>

@@ -1,0 +1,63 @@
+{
+  "name": "codendot/startup",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Jawdat Sobh",
+      "email": "jawdat@codendot.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "app\\": "src/"
+    },
+    "files": [
+      "src/lib/init.php",
+      "src/lib/html.php",
+      "src/lib/yii.php",
+			"src/lib/functions.php",
+      "src/lib/blocks.php"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    },
+    "process-timeout": 0,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
+  "require": {
+    "php": ">=8.2.0",
+    "ext-sodium": "*",
+    "ext-curl": "*",
+    "ext-hash": "*",
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "ext-mysqli": "*",
+    "ext-pcre": "*",
+    "ext-xml": "*",
+    "vlucas/phpdotenv": "^5.5@dev",
+    "yiisoft/yii2": "~2.0.48",
+    "yiisoft/yii2-symfonymailer": "~3.0.0",
+    "yiisoft/yii2-queue": "2.3.4",
+    "yiisoft/yii2-twig": "^2.4.1",
+    "twig/twig": "v3.7.1",
+    "twig/intl-extra": "^2.4.1",
+    "hisorange/browser-detect": "dev-stable",
+    "nesbot/carbon": "3.x-dev",
+    "codemix/yii2-localeurls": "dev-master"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.2.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

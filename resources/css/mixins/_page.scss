@@ -1,0 +1,7 @@
+@mixin page($name) {
+    @at-root {
+        #{selector-nest("body.page-#{str-replace($name,'/','-')}", &)} {
+            @content;
+        }
+    }
+}

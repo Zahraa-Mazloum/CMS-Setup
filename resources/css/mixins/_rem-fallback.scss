@@ -1,0 +1,11 @@
+@mixin rem-fallback($pixels, $property: font-size) {
+    $px-vals: null;
+    @each $val in $pixels {
+        $val-in-px: strip-unit($val) * 1px;
+        $px-vals: append($px-vals, $val-in-px);
+    }
+    $rem-vals: rem($pixels);
+
+    #{$property}: $px-vals;
+    #{$property}: $rem-vals;
+}

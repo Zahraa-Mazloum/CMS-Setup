@@ -1,0 +1,10 @@
+@mixin image-replace {
+    text-indent: 102%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
+}
+
+%image-replace {
+    @include image-replace;
+}

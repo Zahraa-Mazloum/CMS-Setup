@@ -1,0 +1,6 @@
+{{ inflector.classify(type) | title }}
+
+{{ inflector.camel2id(inflector.classify(type)) | bodyClass }}
+{{ seo('categories:' ~ type ~ '-' ~ language(), "", "", []) }}
+
+{{ this.render("@resources/templates/categories/" ~ type ~ ".twig", {type}) | raw }}

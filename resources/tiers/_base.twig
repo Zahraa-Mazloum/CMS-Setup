@@ -1,0 +1,30 @@
+{{ void(this.beginPage()) }}
+{{ register_asset_bundle("app/components/AppAsset") }}
+{% block html %}
+<!doctype html>
+<html lang="{{ app.language }}" dir="{{ language() == 'ar' ? 'rtl' : 'ltr' }}" data-tier="{{ tier().id }}" data-bs-theme="{{ ('theme-' ~ tier().id) | cookies }}">
+    <head>
+        <base href="{{ url.base(true) }}">
+        <meta charset="{{ app.charset }}"/>
+        <meta http-equiv="Content-Type" content="text/html; charset={{ app.charset }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ html.encode(this.title) }} | {{ env("APP_NAME") }}</title>
+        {{ html.csrfMetaTags | raw }}
+        <script>{{ initJavascriptData(tier()) }}</script>
+        {{ void(this.head) }}
+    </head>
+    {% block body %}
+    <body class="{{ isGuest() ? 'is-guest' : 'is-auth' }} route-{{ route() | replace({'/': '-'}) }} {{ this.blocks['bodyClass'] is defined ? this.blocks['bodyClass'] : '' }} {{ this.blocks['layoutClass'] is defined ? this.blocks['layoutClass'] : '' }}" {{ this.blocks['bodyData'] is defined ? this.blocks['bodyData'] : '' }} style="{{ this.blocks['bodyStyle'] is defined ? this.blocks['bodyStyle'] : '' }}">
+        {{ void(this.beginBody()) }}
+        {{ this.blocks['begin'] is defined ? this.blocks['begin'] | raw : '' }}
+        {% block content %}
+        {{ content | raw }}
+        {% endblock %}
+        {{ this.blocks['end'] is defined ? this.blocks['end'] | raw : '' }}
+        {{ void(this.endBody()) }}
+    </body>
+    {% endblock %}
+</html>
+{{ void(this.endPage()) }}
+{% endblock %}

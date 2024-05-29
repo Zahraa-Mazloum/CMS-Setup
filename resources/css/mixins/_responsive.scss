@@ -1,0 +1,51 @@
+@mixin xs() {
+	@include media-breakpoint-only(xs) {
+		@content;
+	}
+}
+
+@mixin sm() {
+	@include media-breakpoint-only(sm) {
+		@content;
+	}
+}
+
+@mixin md() {
+	@include media-breakpoint-only(md) {
+		@content;
+	}
+}
+
+@mixin lg() {
+	@include media-breakpoint-only(lg) {
+		@content;
+	}
+}
+
+@mixin xl() {
+	@include media-breakpoint-only(xl) {
+		@content;
+	}
+}
+
+@mixin xxl() {
+	@include media-breakpoint-only(xxl) {
+		@content;
+	}
+}
+
+@mixin breakpoint($media) {
+	@media ($media) {
+		@content;
+	}
+}
+
+@mixin retina() {
+	@media only screen and (-o-min-device-pixel-ratio: 5 / 4),
+		only screen and (-webkit-min-device-pixel-ratio: 1.25),
+		only screen and (min--moz-device-pixel-ratio: 1.25),
+		only screen and (min-device-pixel-ratio: 1.25),
+		only screen and (min-resolution: 1.25dppx) {
+		@content;
+	}
+}

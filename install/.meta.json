@@ -1,0 +1,11 @@
+{
+	"name": "Startup Project",
+	"logo": "/public/images/logo.png",
+	"composer": "/composer.json",
+	"package": "/package.json",
+	"color": "#c0382a",
+	"backgroundSize":"auto 40%",
+	"paths": {
+		"/cnd-admin": "Administration"
+	}
+}

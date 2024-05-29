@@ -1,0 +1,10 @@
+@import "@scss/config";
+
+@mixin dark() {
+    @if $enable-dark-mode {
+        @at-root [data-bs-theme="dark"] & {
+            color-scheme: dark;
+            @content;
+        }
+    }
+}

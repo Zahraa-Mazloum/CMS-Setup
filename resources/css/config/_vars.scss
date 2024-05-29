@@ -1,0 +1,11 @@
+$rootPath: "../..";
+$imagesPath: "#{$rootPath}/images";
+
+$flag-icons-path: "#{$imagesPath}/flags";
+$flag-icons-rect-path: "/4x3";
+$flag-icons-square-path: "/1x1";
+
+// bootstrap
+
+$color-mode-type: 'data';
+$enable-dark-mode: true;
