@@ -1,3 +1,18 @@
+
+<template>
+    <MDBCarousel
+      v-model="carousel5"
+      :items="items5"
+    />
+  </template>
+
+  <style>
+.carousel-indicators {
+gap:10px;
+}
+
+</style>
+
 <script setup lang="ts">
   import { ref } from "vue";
   import { MDBCarousel } from "mdb-vue-ui-kit";
@@ -26,17 +41,3 @@
 
   const carousel5 = ref(0);
 </script>
-
-<template>
-    <MDBCarousel
-      v-model="carousel5"
-      :items="items5"
-    />
-  </template>
-
-  <style>
-.carousel-indicators {
-gap:10px;
-}
-
-</style>
