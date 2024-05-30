@@ -2,11 +2,12 @@
 
 .main-layout {
     .header-wrapper {
-        position: sticky;
-        top: 0;
-        z-index: 3;
-        min-height: 100px;
-        background: $gray-3;
+      position: fixed;
+      z-index: 3;
+      width: 100%;
+      min-height: 100px;
+      background: transparent;
+      backdrop-filter: blur(2px);
     }
     .body-wrapper {
         position: relative;
@@ -157,6 +158,9 @@
   }
 
   @media(max-width: 760px){
+    .header-wrapper{
+      bottom: 85%;
+    }
     .bar{
       display: block;
     }
@@ -189,8 +193,8 @@
     
     .navmenu.active{
       right: 0;
-      margin-top: 10%;
-    
+      margin-top: -16%;
+      padding-top: 40%;    
     }
     
   }
