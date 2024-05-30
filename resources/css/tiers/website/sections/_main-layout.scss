@@ -5,8 +5,6 @@
       position: fixed;
       z-index: 3;
       width: 100%;
-      min-height: 100px;
-      background: transparent;
       backdrop-filter: blur(2px);
     }
     .body-wrapper {
@@ -159,7 +157,10 @@
 
   @media(max-width: 760px){
     .header-wrapper{
-      bottom: 85%;
+      backdrop-filter: none !important;
+    }
+    .navbars{
+      height: 35px !important;
     }
     .bar{
       display: block;
@@ -192,9 +193,10 @@
     }
     
     .navmenu.active{
+      margin-top: -17%;
+      padding-top: 50%;
       right: 0;
-      margin-top: -16%;
-      padding-top: 40%;    
+    
     }
     
   }
